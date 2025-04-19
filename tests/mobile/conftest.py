@@ -1,3 +1,5 @@
+import uuid
+
 import pytest
 from appium.options.android import UiAutomator2Options
 from selene import browser
@@ -16,7 +18,7 @@ def mobile_management():
         'bstack:options': {
             "projectName": "Python project",
             "buildName": "browserstack-build-1",
-            "sessionName": "BStack first_test",
+            "sessionName": str(uuid.uuid4()),
 
             "userName": settings.bs_username,
             "accessKey": settings.bs_access_key
