@@ -2,6 +2,7 @@ import uuid
 
 import pytest
 from appium.options.android import UiAutomator2Options
+from appium import webdriver
 from selene import browser
 
 from utils.settings import settings
@@ -25,8 +26,10 @@ def mobile_management():
         }
     })
 
-    browser.config.driver_remote_url = settings.bs_url
-    browser.config.driver_options = options
+    browser.config.driver = webdriver.Remote(
+        command_executor=settings.bs_url,
+        options=options
+    )
 
     browser.config.timeout = settings.timeout
 

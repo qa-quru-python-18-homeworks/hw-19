@@ -15,6 +15,7 @@ venv.bak/
 # IDE settings (PyCharm, VS Code)
 .idea/
 .vscode/
+*.iml
 
 # Test frameworks cache (pytest, Hypothesis, etc.)
 .pytest_cache/
