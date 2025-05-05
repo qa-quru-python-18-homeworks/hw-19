@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # Virtual environments (venv, pipenv, poetry) and environment files
-data/.env
+.env
 .venv/
 venv/
 env/

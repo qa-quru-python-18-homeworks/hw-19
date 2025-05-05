@@ -27,3 +27,4 @@ wsproto==1.2.0
 python-dotenv~=1.1.0
 pydantic~=2.11.3
 pydantic-settings~=2.9.1
+requests~=2.32.3

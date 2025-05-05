@@ -1,10 +1,9 @@
-import uuid
-
 import pytest
 from appium.options.android import UiAutomator2Options
 from appium import webdriver
 from selene import browser
 
+from utils.attach import attach_bs_video
 from utils.settings import settings
 
 
@@ -17,9 +16,9 @@ def mobile_management():
         "app": "bs://sample.app",
 
         'bstack:options': {
-            "projectName": "Python project",
-            "buildName": "browserstack-build-1",
-            "sessionName": str(uuid.uuid4()),
+            "projectName": "Mobile test project",
+            "buildName": "browserstack-build",
+            "sessionName": "Mobile test",
 
             "userName": settings.bs_username,
             "accessKey": settings.bs_access_key
@@ -34,5 +33,7 @@ def mobile_management():
     browser.config.timeout = settings.timeout
 
     yield
+
+    attach_bs_video(browser)
 
     browser.quit()
